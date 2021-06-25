@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config({ path: __dirname + '/.env' });
 const {
     MONGO_USERNAME,
     MONGO_PASSWORD,

@@ -5,9 +5,9 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: nodejs
+        image: tahuynh98/node-kubernetes
         container_name: nodejs
-        restart: unless-stopped
+        restart: always
         env_file: .env
         environment:
             - MONGO_USERNAME=$MONGO_USERNAME
@@ -26,7 +26,7 @@ services:
     db:
         image: mongo:4.1.8-xenial
         container_name: db
-        restart: unless-stopped
+        restart: always
         env_file: .env
         environment:
             - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
@@ -42,4 +42,3 @@ networks:
 
 volumes:
     dbdata:
-    node_modules:

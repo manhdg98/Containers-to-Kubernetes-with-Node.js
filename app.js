@@ -6,6 +6,7 @@ const sharks = require('./routes/sharks');
 
 const path = __dirname + '/views/';
 const port = process.env.PORT || 8080;
+require('dotenv').config({ path: __dirname + '/.env' });
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
